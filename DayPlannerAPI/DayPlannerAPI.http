@@ -1,0 +1,6 @@
+@DayPlannerAPI_HostAddress = http://localhost:5299
+
+GET {{DayPlannerAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
