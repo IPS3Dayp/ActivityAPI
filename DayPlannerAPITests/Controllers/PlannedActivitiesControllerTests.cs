@@ -25,6 +25,10 @@ namespace DayPlannerAPI.Controllers.Tests
 
             _context = new ActivityDbContext(options);
             _controller = new PlannedActivitiesController(_context);
+
+            // Reset the database before each test
+            _context.Database.EnsureDeleted();
+            _context.Database.EnsureCreated();
         }
 
         [TestMethod()]
@@ -53,8 +57,8 @@ namespace DayPlannerAPI.Controllers.Tests
         public async Task GetPlannedActivitiesTest()
         {
             // Arrange
-            _context.PlannedActivities.Add(new PlannedActivity { Id = 3, ActivityName = "Activity 1" });
-            _context.PlannedActivities.Add(new PlannedActivity { Id = 4, ActivityName = "Activity 2" });
+            _context.PlannedActivities.Add(new PlannedActivity { Id = 1, ActivityName = "Activity 1" });
+            _context.PlannedActivities.Add(new PlannedActivity { Id = 2, ActivityName = "Activity 2" });
             await _context.SaveChangesAsync();
 
             // Act
@@ -63,18 +67,18 @@ namespace DayPlannerAPI.Controllers.Tests
             // Assert
             Assert.IsNotNull(result);
             Assert.IsInstanceOfType(result.Value, typeof(IEnumerable<PlannedActivity>));
-            Assert.AreEqual(5, result.Value.Count());
+            Assert.AreEqual(2, result.Value.Count());
         }
 
         [TestMethod()]
         public async Task GetPlannedActivityTest()
         {
             // Arrange
-            _context.PlannedActivities.Add(new PlannedActivity { Id = 5, ActivityName = "Activity 1" });
+            _context.PlannedActivities.Add(new PlannedActivity { Id = 1, ActivityName = "Activity 1" });
             await _context.SaveChangesAsync();
 
             // Act
-            var result = await _controller.GetPlannedActivity(5);
+            var result = await _controller.GetPlannedActivity(1);
 
             // Assert
             Assert.IsNotNull(result);
@@ -86,7 +90,7 @@ namespace DayPlannerAPI.Controllers.Tests
         public async Task PostPlannedActivityTest()
         {
             // Arrange
-            var plannedActivity = new PlannedActivity { Id = 6, ActivityName = "New Activity" };
+            var plannedActivity = new PlannedActivity { Id = 1, ActivityName = "New Activity" };
 
             // Act
             var result = await _controller.PostPlannedActivity(plannedActivity);
@@ -96,7 +100,7 @@ namespace DayPlannerAPI.Controllers.Tests
             Assert.IsInstanceOfType(result.Result, typeof(CreatedAtActionResult));
             var createdResult = (CreatedAtActionResult)result.Result;
             Assert.AreEqual("GetPlannedActivity", createdResult.ActionName);
-            Assert.AreEqual(6, createdResult.RouteValues["id"]);
+            Assert.AreEqual(1, createdResult.RouteValues["id"]);
             Assert.AreEqual("New Activity", ((PlannedActivity)createdResult.Value).ActivityName);
         }
 
@@ -104,13 +108,13 @@ namespace DayPlannerAPI.Controllers.Tests
         public async Task PutPlannedActivityTest()
         {
             // Arrange
-            var plannedActivity = new PlannedActivity { Id = 7, ActivityName = "Updated Activity" };
+            var plannedActivity = new PlannedActivity { Id = 1, ActivityName = "Updated Activity" };
             _context.PlannedActivities.Add(plannedActivity);
             await _context.SaveChangesAsync();
 
             // Act
             plannedActivity.ActivityName = "Modified Activity";
-            var result = await _controller.PutPlannedActivity(7, plannedActivity);
+            var result = await _controller.PutPlannedActivity(1, plannedActivity);
 
             // Assert
             Assert.IsNotNull(result);
@@ -121,7 +125,7 @@ namespace DayPlannerAPI.Controllers.Tests
         public async Task DeletePlannedActivityTest()
         {
             // Arrange
-            var plannedActivity = new PlannedActivity { Id = 8, ActivityName = "Activity 8" };
+            var plannedActivity = new PlannedActivity { Id = 1, ActivityName = "Activity 1" };
             _context.PlannedActivities.Add(plannedActivity);
             await _context.SaveChangesAsync();
 
@@ -130,7 +134,7 @@ namespace DayPlannerAPI.Controllers.Tests
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.IsInstanceOfType(result, typeof(NotFoundResult));
+            Assert.IsInstanceOfType(result, typeof(NoContentResult));
         }
     }
 }
