@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DayPlannerAPITests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f49e611124b8a0f322523f2f8a1ceaf9746a0ef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b47f3c558f7f8ba1f942fc8b7f766e93751d673")]
 [assembly: System.Reflection.AssemblyProductAttribute("DayPlannerAPITests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DayPlannerAPITests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

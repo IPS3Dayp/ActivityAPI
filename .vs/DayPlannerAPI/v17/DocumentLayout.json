@@ -30,8 +30,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -42,8 +46,7 @@
               "RelativeToolTip": "DayPlannerAPI\\Program.cs",
               "ViewState": "AQIAAC0AAAAAAAAAAAAAAEQAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T14:26:55.587Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-03T14:26:55.587Z"
             },
             {
               "$type": "Document",
@@ -55,8 +58,7 @@
               "RelativeToolTip": "DayPlannerAPI\\DayPlannerAPI.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-04-03T13:55:28.163Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-03T13:55:28.163Z"
             },
             {
               "$type": "Document",
@@ -68,8 +70,7 @@
               "RelativeToolTip": "DayPlannerAPITests\\DayPlannerAPITests.csproj",
               "ViewState": "AQIAACcAAABAXItT2zoswDAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-04-03T13:52:54.073Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-03T13:52:54.073Z"
             },
             {
               "$type": "Document",
@@ -81,8 +82,7 @@
               "RelativeToolTip": "DayPlannerAPI\\Controllers\\PlannedActivitiesController.cs",
               "ViewState": "AQIAAF8AAAAAAAAAAAAcwHgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T12:24:10.989Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-03T12:24:10.989Z"
             },
             {
               "$type": "Document",
@@ -92,7 +92,7 @@
               "RelativeDocumentMoniker": "DayPlannerAPITests\\Controllers\\PlannedActivitiesControllerTests.cs",
               "ToolTip": "C:\\Code\\S3\\Individual\\ActivityAPI\\DayPlannerAPITests\\Controllers\\PlannedActivitiesControllerTests.cs",
               "RelativeToolTip": "DayPlannerAPITests\\Controllers\\PlannedActivitiesControllerTests.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAkwBcAAAAZAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-03T12:16:46.686Z",
               "EditorCaption": ""
