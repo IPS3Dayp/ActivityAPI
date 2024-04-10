@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Code\\S3\\Individual\\BackEnd\\DayPlannerAPI\\DayPlannerAPI\\DayPlannerAPI.csproj": {}
+    "C:\\Code\\S3\\Individual\\ActivityAPI\\DayPlannerAPI\\DayPlannerAPI.csproj": {}
   },
   "projects": {
-    "C:\\Code\\S3\\Individual\\BackEnd\\DayPlannerAPI\\DayPlannerAPI\\DayPlannerAPI.csproj": {
+    "C:\\Code\\S3\\Individual\\ActivityAPI\\DayPlannerAPI\\DayPlannerAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Code\\S3\\Individual\\BackEnd\\DayPlannerAPI\\DayPlannerAPI\\DayPlannerAPI.csproj",
+        "projectUniqueName": "C:\\Code\\S3\\Individual\\ActivityAPI\\DayPlannerAPI\\DayPlannerAPI.csproj",
         "projectName": "DayPlannerAPI",
-        "projectPath": "C:\\Code\\S3\\Individual\\BackEnd\\DayPlannerAPI\\DayPlannerAPI\\DayPlannerAPI.csproj",
+        "projectPath": "C:\\Code\\S3\\Individual\\ActivityAPI\\DayPlannerAPI\\DayPlannerAPI.csproj",
         "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
-        "outputPath": "C:\\Code\\S3\\Individual\\BackEnd\\DayPlannerAPI\\DayPlannerAPI\\obj\\",
+        "outputPath": "C:\\Code\\S3\\Individual\\ActivityAPI\\DayPlannerAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -58,21 +58,21 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.2, )"
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[8.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.2, )"
+              "version": "[8.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.2, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[8.0.2, )"
+              "version": "[8.0.3, )"
             },
             "MongoDB.Driver": {
               "target": "Package",

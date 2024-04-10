@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayPlannerAPI", "DayPlannerAPI\DayPlannerAPI.csproj", "{96CD03B4-8E45-4CCE-B4C0-5A5E052DC633}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DayPlannerAPI", "DayPlannerAPI\DayPlannerAPI.csproj", "{96CD03B4-8E45-4CCE-B4C0-5A5E052DC633}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DayPlannerAPITests", "DayPlannerAPITests\DayPlannerAPITests.csproj", "{CBFA2DB5-FB52-4D91-B959-33E1706E53DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{96CD03B4-8E45-4CCE-B4C0-5A5E052DC633}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96CD03B4-8E45-4CCE-B4C0-5A5E052DC633}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96CD03B4-8E45-4CCE-B4C0-5A5E052DC633}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBFA2DB5-FB52-4D91-B959-33E1706E53DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBFA2DB5-FB52-4D91-B959-33E1706E53DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBFA2DB5-FB52-4D91-B959-33E1706E53DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBFA2DB5-FB52-4D91-B959-33E1706E53DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
