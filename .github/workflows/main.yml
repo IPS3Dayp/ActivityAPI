@@ -36,20 +36,20 @@ jobs:
         sudo apt-get update
         sudo apt-get install docker-ce
 
-    # Log in to Docker Hub
+    # Log in to Docker Hub using GitHub Personal Access Token
     - name: Log in to Docker Hub
-      run: docker login -u ${{ secrets.luukmsn }} -p ${{ secrets.C4rdB4ckR0gue }}
+      run: docker login -u ${{ secrets.luukmsn }} -p ${{ secrets.C4rdB4ckR0gue }} 
 
     # Build and push Docker image
     - name: Build and push Docker image
       run: |
-        docker build -t your-dockerhub-username/dayplannerapi:latest .
-        docker push your-dockerhub-username/dayplannerapi:latest
+        docker build -t luukmsn/dayplannerapi:latest .
+        docker push luukmsn/dayplannerapi:latest
 
     # Deploy Docker container
     - name: Deploy Docker container
       run: |
-        docker pull your-dockerhub-username/dayplannerapi:latest
+        docker pull luukmsn/dayplannerapi:latest
         docker stop dayplannerapi-container || true
         docker rm dayplannerapi-container || true
-        docker run -d --name dayplannerapi-container -p 80:80 your-dockerhub-username/dayplannerapi:latest
+        docker run -d --name dayplannerapi-container -p 80:80 luukmsn/dayplannerapi:latest
