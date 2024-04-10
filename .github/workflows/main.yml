@@ -18,7 +18,7 @@ jobs:
 
     env:
       Solution_Name: DayPlannerAPI.sln
-      Test_Project_Path: DayPlannerAPITests\DayPlannerAPITests.csproj
+      Test_Project_Path: DayPlannerAPITests/DayPlannerAPITests.csproj
 
     steps:
     - name: Checkout
@@ -38,7 +38,7 @@ jobs:
 
     # Log in to Docker Hub using GitHub Personal Access Token
     - name: Log in to Docker Hub
-      run: docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PASSWORD }} 
+      run: docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PASSWORD }}
 
     # Build and push Docker image
     - name: Build and push Docker image
