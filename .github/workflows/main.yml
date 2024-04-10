@@ -8,18 +8,17 @@ on:
 
 jobs:
 
-  build:
+  build-and-deploy:
 
     strategy:
       matrix:
         configuration: [Debug, Release]
 
-    runs-on: windows-latest  # For a list of available runner types, refer to
-                             # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
+    runs-on: ubuntu-latest
 
     env:
-      Solution_Name: DayPlannerAPI.sln                         # Replace with your solution name, i.e. MyWpfApp.sln.
-      Test_Project_Path: DayPlannerAPITests\DayPlannerAPITests.csproj                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
+      Solution_Name: DayPlannerAPI.sln
+      Test_Project_Path: DayPlannerAPITests\DayPlannerAPITests.csproj
 
     steps:
     - name: Checkout
@@ -27,16 +26,30 @@ jobs:
       with:
         fetch-depth: 0
 
-    # Install the .NET Core workload
-    - name: Install .NET Core
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 8.0.x
+    # Install Docker
+    - name: Install Docker
+      run: |
+        sudo apt-get update
+        sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+        sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+        sudo apt-get update
+        sudo apt-get install docker-ce
 
-    # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
-    - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@v2
+    # Log in to Docker Hub
+    - name: Log in to Docker Hub
+      run: docker login -u ${{ secrets.luukmsn }} -p ${{ secrets.C4rdB4ckR0gue }}
 
-    # Execute all unit tests in the solution
-    - name: Execute unit tests
-      run: dotnet test
+    # Build and push Docker image
+    - name: Build and push Docker image
+      run: |
+        docker build -t your-dockerhub-username/dayplannerapi:latest .
+        docker push your-dockerhub-username/dayplannerapi:latest
+
+    # Deploy Docker container
+    - name: Deploy Docker container
+      run: |
+        docker pull your-dockerhub-username/dayplannerapi:latest
+        docker stop dayplannerapi-container || true
+        docker rm dayplannerapi-container || true
+        docker run -d --name dayplannerapi-container -p 80:80 your-dockerhub-username/dayplannerapi:latest
