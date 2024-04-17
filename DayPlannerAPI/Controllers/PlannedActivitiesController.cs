@@ -115,6 +115,24 @@ namespace DayPlannerAPI.Controllers
         {
             return _context.PlannedActivities.Any(e => e.Id == id);
         }
+
+        // GET: api/PlannedActivities/multiple
+        [HttpGet("multiple")]
+        public async Task<ActionResult<IEnumerable<PlannedActivity>>> GetMultiplePlannedActivities([FromQuery] List<int> ids)
+        {
+            // Filter activities by the provided IDs
+            var plannedActivities = await _context.PlannedActivities
+                .Where(activity => ids.Contains(activity.Id))
+                .ToListAsync();
+
+            if (plannedActivities == null || !plannedActivities.Any())
+            {
+                return NotFound();
+            }
+
+            return plannedActivities;
+        }
+
     }
 }
 

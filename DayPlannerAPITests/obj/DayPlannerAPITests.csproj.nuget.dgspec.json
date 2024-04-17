@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\code\\S3\\IP\\ActivityAPI\\DayPlannerAPITests\\DayPlannerAPITests.csproj": {}
+    "C:\\Code\\S3\\Individual\\ActivityAPI\\DayPlannerAPITests\\DayPlannerAPITests.csproj": {}
   },
   "projects": {
-    "C:\\code\\S3\\IP\\ActivityAPI\\DayPlannerAPITests\\DayPlannerAPITests.csproj": {
+    "C:\\Code\\S3\\Individual\\ActivityAPI\\DayPlannerAPITests\\DayPlannerAPITests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\code\\S3\\IP\\ActivityAPI\\DayPlannerAPITests\\DayPlannerAPITests.csproj",
+        "projectUniqueName": "C:\\Code\\S3\\Individual\\ActivityAPI\\DayPlannerAPITests\\DayPlannerAPITests.csproj",
         "projectName": "DayPlannerAPITests",
-        "projectPath": "C:\\code\\S3\\IP\\ActivityAPI\\DayPlannerAPITests\\DayPlannerAPITests.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\code\\S3\\IP\\ActivityAPI\\DayPlannerAPITests\\obj\\",
+        "projectPath": "C:\\Code\\S3\\Individual\\ActivityAPI\\DayPlannerAPITests\\DayPlannerAPITests.csproj",
+        "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
+        "outputPath": "C:\\Code\\S3\\Individual\\ActivityAPI\\DayPlannerAPITests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\code\\S3\\IP\\ActivityAPI\\DayPlannerAPI\\DayPlannerAPI.csproj": {
-                "projectPath": "C:\\code\\S3\\IP\\ActivityAPI\\DayPlannerAPI\\DayPlannerAPI.csproj"
+              "C:\\Code\\S3\\Individual\\ActivityAPI\\DayPlannerAPI\\DayPlannerAPI.csproj": {
+                "projectPath": "C:\\Code\\S3\\Individual\\ActivityAPI\\DayPlannerAPI\\DayPlannerAPI.csproj"
               }
             }
           }
@@ -119,24 +119,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\code\\S3\\IP\\ActivityAPI\\DayPlannerAPI\\DayPlannerAPI.csproj": {
+    "C:\\Code\\S3\\Individual\\ActivityAPI\\DayPlannerAPI\\DayPlannerAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\code\\S3\\IP\\ActivityAPI\\DayPlannerAPI\\DayPlannerAPI.csproj",
+        "projectUniqueName": "C:\\Code\\S3\\Individual\\ActivityAPI\\DayPlannerAPI\\DayPlannerAPI.csproj",
         "projectName": "DayPlannerAPI",
-        "projectPath": "C:\\code\\S3\\IP\\ActivityAPI\\DayPlannerAPI\\DayPlannerAPI.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\code\\S3\\IP\\ActivityAPI\\DayPlannerAPI\\obj\\",
+        "projectPath": "C:\\Code\\S3\\Individual\\ActivityAPI\\DayPlannerAPI\\DayPlannerAPI.csproj",
+        "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
+        "outputPath": "C:\\Code\\S3\\Individual\\ActivityAPI\\DayPlannerAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -221,7 +221,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
