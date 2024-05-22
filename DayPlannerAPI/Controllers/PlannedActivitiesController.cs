@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System;
 using DayPlannerAPI.Data;
+using System.Text.RegularExpressions;
 
 namespace DayPlannerAPI.Controllers
 {
@@ -59,10 +60,38 @@ namespace DayPlannerAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<PlannedActivity>> PostPlannedActivity(PlannedActivity plannedActivity)
         {
+            // Validate the model
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            // Additional custom validation if needed
+            if (plannedActivity.EndTime <= plannedActivity.StartTime)
+            {
+                ModelState.AddModelError("EndTime", "End time must be after start time.");
+                return BadRequest(ModelState);
+            }
+
+            // Sanitize input to avoid SQL injection
+            if (ContainsSqlInjection(plannedActivity.ActivityName))
+            {
+                ModelState.AddModelError("ActivityName", "Invalid input.");
+                return BadRequest(ModelState);
+            }
+
             _context.PlannedActivities.Add(plannedActivity);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetPlannedActivity), new { id = plannedActivity.Id }, plannedActivity);
+        }
+
+        // Custom method to check for SQL injection patterns
+        private bool ContainsSqlInjection(string input)
+        {
+            // Simple regex patterns to detect SQL injection attempts
+            var sqlInjectionPattern = new Regex(@"('(\s|;|--|$))|(\b(OR|AND)\b\s+(\d+|'[^']*'))", RegexOptions.IgnoreCase);
+            return sqlInjectionPattern.IsMatch(input);
         }
 
         // PUT: api/PlannedActivities/5
