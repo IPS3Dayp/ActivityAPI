@@ -1,19 +1,24 @@
-# Use the official .NET SDK image from Microsoft as a build environment
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
-WORKDIR /app
+# Use the official .NET SDK image
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+WORKDIR /src
 
-# Copy csproj and restore as distinct layers
-COPY . .
-COPY *.csproj ./
+# Copy the project file and restore any dependencies
+COPY DayPlannerAPI.sln ./
+COPY DayPlannerAPI/DayPlannerAPI.csproj DayPlannerAPI/
+COPY DayPlannerAPITests/DayPlannerAPITests.csproj DayPlannerAPITests/
 RUN dotnet restore
 
-# Copy everything else and build
-COPY . ./
-RUN dotnet publish -c Release -o out
+# Copy the remaining source code
+COPY . .
 
-# Build runtime image
-FROM mcr.microsoft.com/dotnet/aspnet:6.0
+# Build the application
+RUN dotnet build -c Release -o /app/build
+
+# Publish the application
+RUN dotnet publish -c Release -o /app/publish
+
+# Build the runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS runtime
 WORKDIR /app
-COPY --from=build-env /app/out .
+COPY --from=build /app/publish .
 ENTRYPOINT ["dotnet", "DayPlannerAPI.dll"]
-
