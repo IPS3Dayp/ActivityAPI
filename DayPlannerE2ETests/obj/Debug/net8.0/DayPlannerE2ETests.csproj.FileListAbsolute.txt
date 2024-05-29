@@ -1,6 +1,0 @@
-C:\Code\S3\Individual\ActivityAPI\DayPlannerE2ETests\obj\Debug\net8.0\DayPlannerE2ETests.csproj.AssemblyReference.cache
-C:\Code\S3\Individual\ActivityAPI\DayPlannerE2ETests\obj\Debug\net8.0\DayPlannerE2ETests.GeneratedMSBuildEditorConfig.editorconfig
-C:\Code\S3\Individual\ActivityAPI\DayPlannerE2ETests\obj\Debug\net8.0\DayPlannerE2ETests.AssemblyInfoInputs.cache
-C:\Code\S3\Individual\ActivityAPI\DayPlannerE2ETests\obj\Debug\net8.0\DayPlannerE2ETests.AssemblyInfo.cs
-C:\Code\S3\Individual\ActivityAPI\DayPlannerE2ETests\obj\Debug\net8.0\DayPlannerE2ETests.csproj.CoreCompileInputs.cache
-C:\Code\S3\Individual\ActivityAPI\DayPlannerE2ETests\obj\Debug\net8.0\DayPlannerE2ETests.sourcelink.json
