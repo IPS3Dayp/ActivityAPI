@@ -16,7 +16,7 @@ WORKDIR /src/DayPlannerAPI
 RUN dotnet build
 
 # Publish the project
-RUN dotnet publish 
+RUN dotnet publish --no-restore -c Release -o /app/publish
 
 # Use the ASP.NET runtime image to run the app
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
