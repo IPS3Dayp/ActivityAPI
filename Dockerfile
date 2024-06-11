@@ -5,6 +5,7 @@ WORKDIR /src
 # Copy the solution and project files
 COPY DayPlannerAPI.sln ./
 COPY DayPlannerAPI/DayPlannerAPI.csproj DayPlannerAPI/
+COPY DayPlannerAPITests/DayPlannerAPITests.csproj DayPlannerAPITests/
 
 # Restore the dependencies
 RUN dotnet restore
@@ -14,9 +15,6 @@ COPY . .
 WORKDIR /src/DayPlannerAPI
 RUN dotnet build
 
-# Expose port 80
-EXPOSE 80
-
 # Publish the project
 RUN dotnet publish --no-restore -c Release -o /app/publish
 
@@ -24,5 +22,8 @@ RUN dotnet publish --no-restore -c Release -o /app/publish
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 COPY --from=build /app/publish .
+
+# Expose port 80
+EXPOSE 80
 
 ENTRYPOINT ["dotnet", "DayPlannerAPI.dll"]
