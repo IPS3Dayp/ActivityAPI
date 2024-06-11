@@ -13,10 +13,10 @@ RUN dotnet restore
 # Copy the remaining source code and build the project
 COPY . .
 WORKDIR /src/DayPlannerAPI
-RUN dotnet build --no-restore -c Release
+RUN dotnet build
 
 # Publish the project
-RUN dotnet publish --no-restore -c Release -o /app/publish
+RUN dotnet publish 
 
 # Use the ASP.NET runtime image to run the app
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
