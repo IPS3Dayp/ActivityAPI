@@ -24,7 +24,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Install Docker
+      # Install Docker (Docker is typically pre-installed on GitHub-hosted runners)
       - name: Install Docker
         run: |
           sudo apt-get update
@@ -36,18 +36,10 @@ jobs:
 
       # Log in to Docker Hub using GitHub Personal Access Token
       - name: Log in to Docker Hub
-        run: docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PASSWORD }}
+        run: echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
 
       # Build and push Docker image
       - name: Build and push Docker image
         run: |
           docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/dayplannerapi:latest .
           docker push ${{ secrets.DOCKER_HUB_USERNAME }}/dayplannerapi:latest
-
-      # Deploy Docker container
-      - name: Deploy Docker container
-        run: |
-          docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/dayplannerapi:latest
-          docker stop dayplannerapi-container || true
-          docker rm dayplannerapi-container || true
-          docker run -d --name dayplannerapi-container -p 80:80 ${{ secrets.DOCKER_HUB_USERNAME }}/dayplannerapi:latest
